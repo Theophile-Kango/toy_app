@@ -1,0 +1,106 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (2098.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (231.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200413152436)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200413152436_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (5.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200413152436"]]
+  ↳ bin/rails:9
+  [1m[35m (428.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (15.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-13 15:26:41.001443"], ["updated_at", "2020-04-13 15:26:41.001443"]]
+  ↳ bin/rails:9
+  [1m[35m (221.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2020-04-13 17:27:20 +0200
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theophile/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/theophile/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/theophile/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.4.2/lib/rails/templates/rails/welcome/index.html.erb (19.3ms)
+Completed 200 OK in 90ms (Views: 61.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2020-04-13 17:27:34 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 8262ms (Views: 8206.3ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/users/new" for ::1 at 2020-04-13 17:27:54 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (221.5ms)
+  Rendered users/new.html.erb within layouts/application (246.5ms)
+Completed 200 OK in 495ms (Views: 451.3ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/users" for ::1 at 2020-04-13 17:28:12 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iJP7PE2mL/lzrxp2DVa8a32pSV7l7z2XlccwohGpjQIfMWeQsDPPynlPIVj/AfXhsNCVkvS7fp1nlfgWeMeB3g==", "user"=>{"name"=>"Theo", "email"=>"fadhili.kango@gmail.com"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  [1m[36mUser Create (15.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Theo"], ["email", "fadhili.kango@gmail.com"], ["created_at", "2020-04-13 15:28:12.339312"], ["updated_at", "2020-04-13 15:28:12.339312"]]
+  ↳ app/controllers/users_controller.rb:30
+  [1m[35m (362.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 399ms (ActiveRecord: 378.0ms)
+
+
+Started GET "/users/1" for ::1 at 2020-04-13 17:28:12 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 342ms (Views: 260.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2020-04-13 17:28:16 +0200
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.5ms)
+  Rendered users/edit.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 260ms (Views: 236.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/users/1" for ::1 at 2020-04-13 17:28:20 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 227ms (Views: 202.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for ::1 at 2020-04-13 17:28:23 +0200
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 154ms (Views: 130.2ms | ActiveRecord: 1.3ms)
+
+
