@@ -27,6 +27,7 @@
 
 - Install VSCode or any code editor you like
 - Install Ruby(most recent version)
+- Install Ruby on rails
 - Run this command on your terminal in order to install rubocop: gem install rubocop 
 
 
