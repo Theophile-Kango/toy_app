@@ -390,3 +390,55 @@ Processing by MicropostsController#create as HTML
 Completed 200 OK in 148ms (Views: 120.6ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for ::1 at 2020-04-13 17:58:11 +0200
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/theophile/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (1.3ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (57.4ms)
+Completed 200 OK in 4498ms (Views: 4424.7ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/microposts/new" for ::1 at 2020-04-13 17:58:28 +0200
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (68.0ms)
+  Rendered microposts/new.html.erb within layouts/application (87.0ms)
+Completed 200 OK in 266ms (Views: 247.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/microposts" for ::1 at 2020-04-13 17:58:38 +0200
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (3.8ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 181ms (Views: 164.5ms | ActiveRecord: 3.8ms)
+
+
+Started DELETE "/microposts/2" for ::1 at 2020-04-13 18:01:08 +0200
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Zh5tJBW9SsRQ3/67zw8etp9oeQQqNCEct1Zu+oMZQvtXintbSOuogr4oAceRYLEN32iOyzweLFQz1/wk3/MEvg==", "id"=>"2"}
+  [1m[36mMicropost Load (4.7ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[36mMicropost Destroy (4.5ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[35m (222.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 252ms (ActiveRecord: 231.6ms)
+
+
+Started GET "/microposts" for ::1 at 2020-04-13 18:01:08 +0200
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (1.0ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 281ms (Views: 248.9ms | ActiveRecord: 1.0ms)
+
+
