@@ -390,6 +390,7 @@ Processing by MicropostsController#create as HTML
 Completed 200 OK in 148ms (Views: 120.6ms | ActiveRecord: 0.5ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for ::1 at 2020-04-13 17:58:11 +0200
   [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/theophile/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
@@ -440,5 +441,226 @@ Processing by MicropostsController#index as HTML
   ↳ app/views/microposts/index.html.erb:15
   Rendered microposts/index.html.erb within layouts/application (10.0ms)
 Completed 200 OK in 281ms (Views: 248.9ms | ActiveRecord: 1.0ms)
+=======
+Started GET "/" for ::1 at 2020-04-14 09:11:01 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/modupe/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (7.1ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 885ms (Views: 790.4ms | ActiveRecord: 8.5ms)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMicropost Load (0.3ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2020-04-14 09:14:27 +0100
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 91ms (Views: 77.9ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/microposts/new" for ::1 at 2020-04-14 09:14:29 +0100
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (33.8ms)
+  Rendered microposts/new.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 101ms (Views: 97.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for ::1 at 2020-04-14 09:14:32 +0100
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xA8r51NFiyF3JLybhstFMXSiJOpVUKWjhvpmW5jC1zwpeSaw4XbSe2tEbfJSoUdMiksfdGwMFNJUj9XyDHP/cw==", "micropost"=>{"content"=>"", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (5.6ms)
+  Rendered microposts/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 150ms (Views: 102.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for ::1 at 2020-04-14 09:16:05 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 131ms (Views: 120.6ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/users/new" for ::1 at 2020-04-14 09:16:07 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (8.6ms)
+  Rendered users/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 166ms (Views: 161.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-04-14 09:16:09 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eqErWPhVnfKPHX0193pDEwNaZdHMpXxAUGFq7Tk9RjZ9g/XLAin33Q4Y7ugqyCi4akrbqJtMFILLQebyz2gp6w==", "user"=>{"name"=>"", "email"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  [1m[36mUser Create (12.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["email", ""], ["created_at", "2020-04-14 08:16:09.590785"], ["updated_at", "2020-04-14 08:16:09.590785"]]
+  ↳ app/controllers/users_controller.rb:30
+  [1m[35m (26.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 76ms (ActiveRecord: 38.7ms)
+
+
+Started GET "/users/2" for ::1 at 2020-04-14 09:16:09 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 197ms (Views: 167.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/2" for ::1 at 2020-04-14 09:16:51 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 167ms (Views: 158.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2020-04-14 09:16:54 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 282ms (Views: 271.6ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/2" for ::1 at 2020-04-14 09:16:58 +0100
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"v97C39UusVCeBlmRehxgL/N9a5aVtzTJIiz5oIPNxIgxQp2/3zpQkF4hISjyRYmw8vTNNnxW5WIAF13TNb72WQ==", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:57
+  [1m[36mUser Destroy (1.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/users_controller.rb:57
+  [1m[35m (18.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:57
+Redirected to http://localhost:3000/users
+Completed 302 Found in 65ms (ActiveRecord: 20.3ms)
+
+
+Started GET "/users" for ::1 at 2020-04-14 09:16:58 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 160ms (Views: 150.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for ::1 at 2020-04-14 09:17:00 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (22.1ms)
+  Rendered users/new.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 234ms (Views: 229.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-04-14 09:17:02 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Zu1GexDf6iJhdvAMEM0/7BgzUEzf2NIId39O64lKh11hz5jo6qOADeBzY9HNf1RHcSPuNYgxusrsX8L0fx/ogA==", "user"=>{"name"=>"", "email"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["email", ""], ["created_at", "2020-04-14 08:17:02.234936"], ["updated_at", "2020-04-14 08:17:02.234936"]]
+  ↳ app/controllers/users_controller.rb:30
+  [1m[35m (17.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 35ms (ActiveRecord: 18.4ms)
+
+
+Started GET "/users/3" for ::1 at 2020-04-14 09:17:02 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 112ms (Views: 104.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2020-04-14 09:17:05 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 155ms (Views: 146.4ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/users/3" for ::1 at 2020-04-14 09:17:09 +0100
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OZaY5B+bLPbprMCBHD5EbZc5VSPnjrtn6FQ4gK4riXi3CseEFY/NNimLuDiUZ63ylrDzgw5vaszKb5zzGFi7qQ==", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:57
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/users_controller.rb:57
+  [1m[35m (29.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:57
+Redirected to http://localhost:3000/users
+Completed 302 Found in 69ms (ActiveRecord: 31.0ms)
+
+
+Started GET "/users" for ::1 at 2020-04-14 09:17:09 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 203ms (Views: 192.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for ::1 at 2020-04-14 09:18:20 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (75.2ms)
+Completed 200 OK in 287ms (Views: 197.9ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/users/new" for ::1 at 2020-04-14 09:18:23 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (20.5ms)
+  Rendered users/new.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 142ms (Views: 137.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-04-14 09:18:24 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B7AWEbhBrr65b4H6MZFWlw4YBSYWQOqd7yN0/UEtbfIAksiCQj3EkThqEifsIz08Zwi7X0Gpgl90A/jit3gCLw==", "user"=>{"name"=>"", "email"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (21.7ms)
+  Rendered users/new.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 190ms (Views: 172.8ms | ActiveRecord: 0.2ms)
+>>>>>>> 7e2296031d5d0d0a90c1b814859c58dfe40a82df
 
 
